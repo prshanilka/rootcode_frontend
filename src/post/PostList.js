@@ -37,7 +37,10 @@ class PostList extends React.Component {
 
             {this.state.posts.map(post => {
               return (
-                <Link to="/single">
+                <Link key={post.postID} to={{
+                  pathname: "/single",
+                  state: { title: post.post_title,description:post.post_des,color:post.post_t_color,id:post.postID,comments:post.comments }
+                }} style={{textDecoration:"none"}}>
                   <Post  title={post.post_title} description={post.post_des} comments={post.comments} color={post.post_t_color}/>
                 </Link>
               );

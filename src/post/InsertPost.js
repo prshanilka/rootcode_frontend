@@ -10,7 +10,7 @@ const InsertPost = () => {
   const [post, setPost] = useState({
     title: "",
     color: "",
-    description: "asdasdasdasdad",
+    description: "",
   });
 
   const insertPost = async () => {
@@ -56,10 +56,10 @@ const InsertPost = () => {
 
           </textarea>
           <div>
-          <label class="cs">Select Color</label>
-          <div class="foo blue" style={ (post.color=="blue") ? { border:'1px solid white'} : {border:'1px solid black'} }    onClick={() => cchange("blue")}></div>
-          <div class="foo purple" style={ (post.color=="yellow") ? { border:'1px solid white'} : {border:'1px solid black'} } onClick={() => cchange("yellow")}></div>
-          <div class="foo wine" style={ (post.color=="pink") ? { border:'1px solid white'} : {border:'1px solid black'} } onClick={() => cchange("pink")}></div>
+          <label className="cs">Select Color</label>
+          <div className="foo blue" style={ (post.color==="blue") ? { border:'1px solid white'} : {border:'1px solid black'} }    onClick={() => cchange("blue")}></div>
+          <div className="foo purple" style={ (post.color==="yellow") ? { border:'1px solid white'} : {border:'1px solid black'} } onClick={() => cchange("yellow")}></div>
+          <div className="foo wine" style={ (post.color==="pink") ? { border:'1px solid white'} : {border:'1px solid black'} } onClick={() => cchange("pink")}></div>
           </div>
           <button className="buttonb" onClick={insertPost}>Publish</button>
         </form>
