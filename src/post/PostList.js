@@ -1,32 +1,22 @@
 import React from "react";
 import axios from "axios";
-
+import Post from "./Post"
 class PostList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Posts: [],
+      posts: [],
     };
   }
 
-  // componentDidMount() {
-  //   console.log("componentDidMount");
-  //   const promise = axios.get("https://localhost:5001/api/course");
-  //   promise
-  //     .then((res) => {
-  //       console.log("response", res.data);
-  //       const promise = axios.get("https://localhost:5001/api/batch");
-  //     })
-  //     .catch((error) => console.log(error));
-  // }
 
   async componentDidMount() {
     console.log("componentDidMount");
     try {
-      const res = await axios.get("https://localhost:3000/posts");
+      const res = await axios.get("http://localhost:4000/post");
 
-      console.log("result", res.data);
-      this.setState({ Posts: res.data });
+      console.log("result", res.data.data);
+      this.setState({ posts: res.data.data });
     } catch (e) {
       console.log(e);
     }
@@ -36,33 +26,14 @@ class PostList extends React.Component {
     console.log("render");
     return (
       <>
-        PostList
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>technologies</th>
-              <th>Tags</th>
-              <th>Duration</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.Posts.map((course, index) => {
+            {this.state.posts.map(post => {
               return (
-                <tr key={index}>
-                  <td>{course.id}</td>
-                  <td>{course.name}</td>
-                  <td>{course.description}</td>
-                  <td>{course.technologies}</td>
-                  <td>{course.tags}</td>
-                  <td>{course.duration}</td>
-                </tr>
+                <Post  title={post.post_title} description={post.post_des} comments={post.comments} color={post.post_t_color}/>
+                
               );
-            })}
-          </tbody>
-        </table>
+            })
+            }
+
       </>
     );
   }

@@ -1,9 +1,9 @@
-import Post from './post/Post'
+import PostList from './post/PostList'
 function App() {
 
   return (
     <>
-      <Post title="ASD" description="ASD" comments="5"/>
+      <PostList/>
     </>
   );
 }
