@@ -1,29 +1,23 @@
-import PostList from './post/PostList'
-import InsertPost from './post/InsertPost'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import PostList from './post/PostList';
+import InsertPost from './post/InsertPost';
+import SinglePost from './post/SinglePost';
+import { Route, Router } from "react-router-dom";
 function App() {
 
   return (
-    <>
-  <Router>
-    <Switch>
-          <Route exact path="/">
-            <PostList></PostList>
-          </Route>
-          <Route path="/new">
-            <InsertPost />
-          </Route>
-        </Switch>
-  </Router>
-    </>
+
+<Router>
+        <Route exact path="/">
+          <PostList></PostList>
+        </Route>
+        <Route path="/new">
+          <InsertPost />
+        </Route>
+        <Route path="/single">
+          <SinglePost />
+        </Route>
+</Router>
   );
 }
-function Home() {
-  return <h2>Home</h2>;
-}
+
 export default App;

@@ -46,7 +46,7 @@ textarea {
 .buttonb {
   background-color: #000000; /* Green */
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -59,4 +59,28 @@ textarea {
 
 .ls{
   margin-left: 30px;
+}
+.cs{
+  margin-left: 30px;
+}
+
+.foo {
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+.blue {
+  background: blue;
+}
+
+.purple {
+  background:yellow;
+}
+
+.wine {
+  background: pink;
 }

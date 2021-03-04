@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Post from "./Post"
-import {Link
+import {Link,useHistory
 } from "react-router-dom";
 class PostList extends React.Component {
   constructor(props) {
@@ -37,8 +37,9 @@ class PostList extends React.Component {
 
             {this.state.posts.map(post => {
               return (
-                <Post  title={post.post_title} description={post.post_des} comments={post.comments} color={post.post_t_color}/>
-                
+                <Link to="/single">
+                  <Post  title={post.post_title} description={post.post_des} comments={post.comments} color={post.post_t_color}/>
+                </Link>
               );
             })
             }
