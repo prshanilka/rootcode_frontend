@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Post from "./Post"
+import {Link
+} from "react-router-dom";
 class PostList extends React.Component {
   constructor(props) {
     super(props);
@@ -23,9 +25,16 @@ class PostList extends React.Component {
   }
 
   render() {
-    console.log("render");
     return (
-      <>
+
+      <div className="mainD">
+        <h3 style={{textAlign:"center"}}>Home</h3>
+        <hr></hr>
+        <Link to="/new">
+          <button className="buttonc">Create New Post</button>
+        </Link>
+           
+
             {this.state.posts.map(post => {
               return (
                 <Post  title={post.post_title} description={post.post_des} comments={post.comments} color={post.post_t_color}/>
@@ -34,7 +43,7 @@ class PostList extends React.Component {
             })
             }
 
-      </>
+      </div>
     );
   }
 }
