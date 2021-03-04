@@ -19,7 +19,7 @@ function App() {
         <Route path="/new">
           <InsertPost />
         </Route>
-        <Route path="/single">
+        <Route path="/single" >
           <SinglePost />
         </Route>
 </Router>
